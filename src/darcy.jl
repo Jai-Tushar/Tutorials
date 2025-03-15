@@ -55,7 +55,7 @@
 
 using Gridap
 domain = (0,1,0,1)
-partition = (100,100)
+partition = (4,4)
 model = CartesianDiscreteModel(domain,partition)
 
 # ## Multi-field FE spaces
@@ -93,7 +93,7 @@ dΩ = Measure(trian,degree)
 
 # In order to integrate the Neumann boundary condition, we only need to build an integration mesh for the right side of the domain (which is the only part of $\Gamma_{\rm N}$, where the Neumann function $h$ is different from zero). Within the model, the right side of $\Omega$ is identified with the boundary tag 8. Using this identifier, we extract the corresponding surface triangulation and create the required Lebesgue measure.
 
-neumanntags = [8,]
+neumanntags = [7,8]
 btrian = BoundaryTriangulation(model,tags=neumanntags)
 dΓ = Measure(btrian,degree)
 
